@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <!--
+    <form method="get">
+        <label>EX 01:</label>
+        <input type="radio" name="ex" value="1"/>
+        <label>EX 02:</label>
+        <input type="radio" name="ex" value="1"/>
+        <label>EX 03:</label>
+        <input type="radio" name="ex" value="1"/>
+        <label>EX 04:</label>
+        <input type="radio" name="ex" value="1"/>
+        <label>EX 05:</label>
+        <input type="radio" name="ex" value="1"/>
+        <label>EX 06:</label>
+        <input type="radio" name="ex" value="1"/>
+        <button type="submit" name="send">send</button>
+    </form>-->
+    <script>
+        function tran(tab){
+            alert("This is the answer of the first ex");
+            var newtab=Array(tab.length);
+            let ele = document.createElement("h1");
+            ele.innerHTML="The tables:";
+            ele.style.textAlign="center";
+            document.body.appendChild(ele);
+            let el = document.createElement("h3");
+            el.innerHTML="From : "+tab;
+            el.style.textAlign="center";
+            document.body.appendChild(el);
+            for(let i=0; i<tab.length;i++){
+                newtab[i]=[...tab[i]];
+                let ele = document.createElement("p");
+                ele.innerHTML=newtab[i];
+                ele.style.textAlign="center";
+                document.body.appendChild(ele);
+                console.log("The ",i+1," array :",newtab[i]);
+            }
+            console.log("The full array :",newtab);
+        }
+        function order(tab){
+            alert("This is the answer of the second ex");
+            let ele = document.createElement("h1");
+            ele.innerHTML="The String is :<h3 style='color: black;'>"+tab+"</h3>";
+            ele.style.textAlign="center";
+            ele.style.color="blue";
+            document.body.appendChild(ele);
+            var k=1;
+            if(tab.charAt(0)>tab.charAt(1))
+                k=0;
+            for(let i=1;i<tab.length;i++){
+                if(k){
+                    if(tab.charAt(i-1)>tab.charAt(i)){
+                        let ele = document.createElement("h1");
+                        ele.innerHTML="<br><br>is the string ordered ?<br>The answer is False";
+                        ele.style.textAlign="center";
+                        ele.style.color="Red";
+                        document.body.appendChild(ele);
+                        return false;
+                    }
+                }else{
+                    if(tab.charAt(i-1)<tab.charAt(i)){
+                        let ele = document.createElement("h1");
+                        ele.innerHTML="<br><br>is the string ordered ?<br>The answer is False";
+                        ele.style.textAlign="center";
+                        ele.style.color="Red";
+                        document.body.appendChild(ele);
+                        return false;
+                    }
+                }
+            }
+            ele = document.createElement("h1");
+            ele.innerHTML="<br><br>is the string ordered ?<br>The answer is True";
+            ele.style.textAlign="center";
+            ele.style.color="Green";
+            document.body.appendChild(ele);
+            return true;
+        }
+        function palindrome(num){
+            alert("This is the answer of the third ex");
+            var st = num.toString();
+            
+            
+            var ele = document.createElement("h1");
+            ele.innerHTML="The number is </h1>:<h3 style='color: black;'>"+st+"</h3>";
+            ele.style.textAlign="center";
+            ele.style.color="blue";
+            document.body.appendChild(ele);
+            
+            
+            for(let i=0; i<(st.length/2);i++){
+                if(st.charAt(i)!=st.charAt(st.length-1-i)){
+                    ele = document.createElement("h1");
+                    ele.innerHTML="<br><br>is it palindrome ?<br>The answer is Flase";
+                    ele.style.textAlign="center";
+                    ele.style.color="red";
+                    document.body.appendChild(ele);
+                    return false;
+                }
+            }
+            ele = document.createElement("h1");
+            ele.innerHTML="<br><br>is it palindrome ?<br>The answer is True";
+            ele.style.textAlign="center";
+            ele.style.color="green";
+            document.body.appendChild(ele);
+            return true;
+        }
+        function ps(word){
+            alert("This is the answer of the forth ex");
+            var ele= document.createElement("h1");
+            ele.innerHTML="The word is :<h3 style='color: black;'> "+word+" </h3>";
+            ele.style.textAlign="center";
+            ele.style.color="blue";
+            document.body.appendChild(ele);
+            if((word.charAt(word.length-1)=='s'||word.charAt(word.length-1)=='S')&&(word.length>1)){
+                ele= document.createElement("h1");
+                ele.innerHTML="<br><br>is it plural ?<br>The answer is True";
+                ele.style.textAlign="center";
+                ele.style.color="green";
+                document.body.appendChild(ele);
+                return true;
+            }
+            ele= document.createElement("h1");
+            ele.innerHTML="<br><br>is it plural ?<br>The answer is Flase";
+            ele.style.textAlign="center";
+            ele.style.color="red";
+            document.body.appendChild(ele);
+            return false
+        }
+        function eight(num1,num2){
+            var ele=document.createElement("h1");
+            // +
+            if(num1+num2==8){
+                ele.innerHTML=num1+" + "+num2+" = 8";
+                ele.style.textAlign="center";
+                ele.style.color="green";
+                document.body.appendChild(ele);
+                return '+';
+            }
+            // -
+            if(num1-num2==8){
+                ele.innerHTML=num1+" - "+num2+" = 8";
+                ele.style.textAlign="center";
+                ele.style.color="green";
+                document.body.appendChild(ele);
+                return '-';
+            }
+            if(num2-num1==8){
+                ele.innerHTML=num2+" - "+num1+" = 8";
+                ele.style.textAlign="center";
+                ele.style.color="green";
+                document.body.appendChild(ele);
+                return '-';
+            }
+            // x
+            if(num1*num2==8){
+                ele.innerHTML=num1+" x "+num2+" = 8";
+                ele.style.textAlign="center";
+                ele.style.color="green";
+                document.body.appendChild(ele);
+                return '*';
+            }
+            //  /
+            if(num1/num2==8){
+                ele.innerHTML=num1+" / "+num2+" = 8";
+                ele.style.textAlign="center";
+                ele.style.color="green";
+                document.body.appendChild(ele);
+                return '/';
+            }
+            if(num2/num1==8){
+                ele.innerHTML=num2+" / "+num1+" = 8";
+                ele.style.textAlign="center";
+                ele.style.color="green";
+                document.body.appendChild(ele);
+                return '/';
+            }
+            ele.innerHTML="NULL";
+            ele.style.textAlign="center";
+            ele.style.color="red";
+            document.body.appendChild(ele);
+            return null;
+            
+        }
+        function drink(tab){
+            for(let i=0;i<tab.length-1;i++){
+                for(let j=1;j<tab.length;j++){
+                    if(tab[i].prix>tab[j].prix){
+                        let min=tab[i].prix;
+                        let name=tab[i].nom;
+                        
+                        tab[i].prix=tab[j].prix;
+                        tab[j].prix=min;
+                        
+                        tab[i].nom=tab[j].nom;
+                        tab[j].nom=name;
+                    }
+                }
+            }
+            var ele= document.createElement
+            alert(12);
+            console.log(tab);
+            return tab;
+        }
+        //tran(["hehe","nono","jiji","dddddd","i give up"]);
+        //order("abc");
+        //palindrome(515);
+        //ps("gs");
+        //eight(10,18);
+        drink([{nom : "citron", prix: 50 },{nom : "menthe",prix: 35 },{nom : "fraise",prix:5}]);
+        
+    </script>
+</body>
+</html>
